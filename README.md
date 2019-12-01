@@ -9,6 +9,6 @@ seekers and writers, and offer more value to both of these groups in the long te
 # Business Objecives and Constraints
 - Cost of Mis - classification can be very high.
 - Probability of the question pair being duplicate is needed,
- so that a thrshold of choice could be chosen.
+ so that a threshold of choice could be chosen.
 - No strict latency constraints.
 - Interpretability is partially - important. Business owner needs to have an idea why the pair is duplicate (or not), but customer does not care for the reasoning.
