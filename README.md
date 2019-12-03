@@ -44,3 +44,8 @@ Since we want probability of the class label. We will use the following KPI's:
 - Log - loss
 - Binary Confusion Matrix: To get a more detailed understanding of model performance
  
+### 2.2.3 Train Test Split
+There is a temporal nature to the problem, because the questions can 
+change over time. However unfortunately timestamp is not available i the 
+provided dataset. Hence we will use random splitting in the ratio of 
+70:30 or 80:20.
