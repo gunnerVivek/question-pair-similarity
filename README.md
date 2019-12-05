@@ -34,6 +34,9 @@ id | qid1 | qid2 | question1 | question2 | is_duplicate
 7|15|16|How can I be a good geologist?|What should I do to be a great geologist?|1
 11|23|24|How do I read and find my YouTube comments?|How can I see all my Youtube comments?|1
 
+### 2.1.3 Data Link
+Tarining data can be found [here](data/train.csv).
+
 ## 2.2 Mapping Business Case to ML Problem
 
 ### 2.2.1 Type of Machine Learning Problem
