@@ -54,8 +54,10 @@ provided dataset. Hence we will use random splitting in the ratio of
 70:30 or 80:20.
 
 
-# 3 Exploratory Data Analysis
+# 3 Exploratory Data Analysis and Featurization
 
 Documentation and Code for Basic Statistics and Basic Feature Extraction can be found [here](notebooks/1_Quora.ipynb).
 
 Documentation and Code for Text preprocessing and Advanced Feature Extraction can be found [here](notebooks/2_Quora_Preprocessing.ipynb)
+
+Documentation and Code for Fetaurization of Text data can be found [here](notebooks/3_Q_Mean_W2V.ipynb) 
