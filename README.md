@@ -79,7 +79,7 @@ Few of the pre modelling steps include Reading data from local file system and s
 
 Next a random model was constructed and the performance of the random model was measured. This serves as a base line model, based on which value of any future model will be evaluated.
 
-The models that were used are : Logistic regression, Linear Support Vector Machines and XGBoost.
+The models that were used are : Random Baseline model, Logistic regression, Linear Support Vector Machines and XGBoost.
 
 Detailed documentation and code of the modelling can be found [here](notebooks/4_Machine_Learning_Models.ipynb).
 
