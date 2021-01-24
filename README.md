@@ -1,4 +1,7 @@
+[toc]
+
 # Problem Statement
+
 Quora is a place to gain and share knowledge—about anything. It’s a platform to ask questions and connect with people who contribute unique insights and quality answers. This empowers people to learn 
 from each other and to better understand the world.
 
@@ -7,15 +10,19 @@ the best answer to their question, and make writers feel they need to answer mul
 seekers and writers, and offer more value to both of these groups in the long term.
 
 
-# 1. Business Objecives and Constraints
+
+# 1. Business Objectives and Constraints
+
 - Cost of Mis - classification can be very high.
-- Probability of the question pair being duplicate is needed,
- so that a threshold of choice could be chosen.
+- Probability of the question pair being duplicate is needed, so that a threshold of choice could be chosen.
 - No strict latency constraints.
 - Interpretability is partially - important. Business owner needs to have an idea why the pair is duplicate (or not), but customer does not care for the reasoning.
 
 
+
 # 2. Machine Learning Problem
+
+
 
 ## 2.1 DATA
 
@@ -35,7 +42,9 @@ id | qid1 | qid2 | question1 | question2 | is_duplicate
 11|23|24|How do I read and find my YouTube comments?|How can I see all my Youtube comments?|1
 
 ### 2.1.3 Data Link
-Tarining data can be found [here](data/train.csv).
+Training data can be found [here](data/train.csv).
+
+
 
 ## 2.2 Mapping Business Case to ML Problem
 
@@ -43,21 +52,50 @@ Tarining data can be found [here](data/train.csv).
 Given a pair of questions, we have to predict if they are duplicate or not. Thus it is a Binary Classification problem.
 
 ### 2.2.2 Performance Metric
-Since we want probability of the class label. We will use the following KPI's:
+Since we want probability of the class label. We will use the following Performance metrices:
 - Log - loss
 - Binary Confusion Matrix: To get a more detailed understanding of model performance
- 
+
 ### 2.2.3 Train Test Split
-There is a temporal nature to the problem, because the questions can 
-change over time. However unfortunately timestamp is not available i the 
-provided dataset. Hence we will use random splitting in the ratio of 
-70:30 or 80:20.
+There is a temporal nature to the problem, because the questions can change over time. However unfortunately timestamp is not available in the provided dataset. Hence we will use random splitting in the ratio of 70:30 or 80:20.
 
 
-# 3 Exploratory Data Analysis and Featurization
+
+# 3. Exploratory Data Analysis and Featurization
 
 Documentation and Code for Basic Statistics and Basic Feature Extraction can be found [here](notebooks/1_Quora.ipynb).
 
-Documentation and Code for Text preprocessing and Advanced Feature Extraction can be found [here](notebooks/2_Quora_Preprocessing.ipynb)
+Documentation and Code for Text pre-processing and Advanced Feature Extraction can be found [here](notebooks/2_Quora_Preprocessing.ipynb)
 
-Documentation and Code for Fetaurization of Text data can be found [here](notebooks/3_Q_Mean_W2V.ipynb) 
+Documentation and Code for Featurization of Text data can be found [here](notebooks/3_Q_Mean_W2V.ipynb) 
+
+
+
+# 4. Machine Learning Models
+
+This section describes the machine learning models used and the pre modelling steps and methodologies used in the project. 
+
+Few of the pre modelling steps include Reading data from local file system and storing into a SQL table.  Converting categorical value to Numeric representation and creating  randomised train test split data sets.
+
+Next a random model was constructed and the performance of the random model was measured. This serves as a base line model, based on which value of any future model will be evaluated.
+
+The models that were used are : Logistic regression, Linear Support Vector Machines and XGBoost.
+
+Detailed documentation and code of the modelling can be found [here](notebooks/4_Machine_Learning_Models.ipynb).
+
+
+
+# 5. Result Summary
+
+
+
+Model | Test Log loss
+----------|-------------------
+Random Model |0.89
+Logistic Regression |0.52
+SVM |0.49
+XGBoost |**0.36**
+
+
+
+Thus from above table we can see that, XGBoost gives best result. Thus using XGBoost we can be most assured of the similarities or dissimilarities among the question pairs.
